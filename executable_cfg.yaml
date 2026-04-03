@@ -1,0 +1,16 @@
+options:
+  platform: psx
+  basename: CrashTeamRacing
+  target_path: ../SCUS_944.26
+  base_path: split
+  disassemble_all: true
+
+segments:
+  - name: main
+    type: code
+    start: 0x800
+    vram: 0x80010000
+    subsegments:
+      - [0x800, asm, SCUS-94426]
+
+  - [0x7E000]
