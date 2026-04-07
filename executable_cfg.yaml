@@ -11,7 +11,9 @@ segments:
     start: 0x800
     vram: 0x80010000
     subsegments:
-      - [0x800, rodata, SCUS-94426]
+      - [0x800, .rodata, SCUS-94426]
       - [0x2BE0, asm, SCUS-94426]
+      - [0x711A0, .data, SCUS-94426]
+      - [0x7DE68, .bss, SCUS-94426]
 
   - [0x7E000]
