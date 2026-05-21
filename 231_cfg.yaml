@@ -1,0 +1,19 @@
+options:
+  platform: psx
+  basename: CrashTeamRacing
+  target_path: ../231_Threads_Racing.bin
+  base_path: split
+  disassemble_all: true
+
+segments:
+  - name: main
+    type: code
+    start: 0x0
+    vram: 0x800ab9f0
+    subsegments:
+      - [0x0, .rodata, ovr_231]
+      - [0xC0, asm, ovr_231_part1]
+      - [0x6F6C, .data, ovr_231]
+      - [0x7730, asm, ovr_231_part2]
+
+  - [0xEB58]
