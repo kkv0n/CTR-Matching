@@ -1,10 +1,16 @@
 options:
   platform: psx
+  compiler: PSYQ
   basename: CrashTeamRacing
   target_path: ../221_EndRaceMenu_CrystalChallenge.bin
   base_path: split
   disassemble_all: true
+  symbol_addrs_path:
+    - ../syms/funcs_ovr_221.txt
+    - ../syms/funcs_SCUS_94426.txt
 
+# EndRaceMenu overlays (221-225) are alternatives: they all load at 0x8009F6FC.
+# This one does not use $gp, so gp_value is not needed.
 segments:
   - name: ovr_221
     type: code
@@ -12,6 +18,7 @@ segments:
     vram: 0x8009F6FC
     subsegments:
       - [0x0,   .rodata, ovr_221]
-      - [0x14,  asm,    ovr_221]
+      - [0x14,  asm,     ovr_221]
       - [0x4F0, .data,   ovr_221]
+
   - [0x530]

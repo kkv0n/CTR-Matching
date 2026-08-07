@@ -5,7 +5,6 @@ options:
   target_path: ../231_Threads_Racing.bin
   base_path: split
   disassemble_all: true
-  gp_value: 0x8008cf6c
   symbol_addrs_path:
     - ../syms/funcs_ovr_231.txt
     - ../syms/funcs_SCUS_94426.txt

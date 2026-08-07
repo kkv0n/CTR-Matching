@@ -1,0 +1,25 @@
+options:
+  platform: psx
+  compiler: PSYQ
+  basename: CrashTeamRacing
+  target_path: ../222_EndRaceMenu_ArcadeAdventure.bin
+  base_path: split
+  disassemble_all: true
+  symbol_addrs_path:
+    - ../syms/funcs_ovr_222.txt
+    - ../syms/funcs_SCUS_94426.txt
+
+# EndRaceMenu overlays (221-225) are mutually exclusive: all load at 0x8009F6FC.
+# None of them uses $gp, so gp_value is not needed.
+# Layout of the object: .rodata (id word + params + format strings) -> .text -> .data
+segments:
+  - name: ovr_222
+    type: code
+    start: 0x0
+    vram: 0x8009F6FC
+    subsegments:
+      - [0x0,   .rodata, ovr_222]
+      - [0x8,  asm,     ovr_222]
+      - [0x143C, .data,   ovr_222]
+
+  - [0x14B4]
