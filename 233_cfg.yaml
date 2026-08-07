@@ -1,0 +1,30 @@
+options:
+  platform: psx
+  compiler: PSYQ
+  basename: CrashTeamRacing
+  target_path: ../233_Threads_Cutscene.bin
+  base_path: split
+  disassemble_all: true
+  gp_value: 0x8008cf6c
+  symbol_addrs_path:
+    - ../syms/funcs_ovr_233.txt
+    - ../syms/funcs_SCUS_94426.txt
+
+# Threads overlays (230-233) are mutually exclusive: all load at 0x800AB9F0.
+# Two objects concatenated, each laid out as .rodata -> .text -> .data.
+# The .rodata of object 2 (0xCC54) sits right between object 1's .data and
+# object 2's code; verified by reference direction with blobsplit.csx.
+segments:
+  - name: ovr_233
+    type: code
+    start: 0x0
+    vram: 0x800ab9f0
+    subsegments:
+      - [0x0,     .rodata, ovr_233_1]   # spawn, g-dancer, podium, tawna, victorycam + pointer tables
+      - [0x3E4,   asm,     ovr_233_1]
+      - [0x4858,  .data,   ovr_233_1]
+      - [0xCC54,  .rodata, ovr_233_2]
+      - [0xCC78,  asm,     ovr_233_2]
+      - [0xDA04,  .data,   ovr_233_2]
+
+  - [0xDE0C]

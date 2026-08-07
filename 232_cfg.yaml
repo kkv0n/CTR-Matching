@@ -1,0 +1,24 @@
+options:
+  platform: psx
+  compiler: PSYQ
+  basename: CrashTeamRacing
+  target_path: ../232_Threads_AdvHub.bin
+  base_path: split
+  disassemble_all: true
+  symbol_addrs_path:
+    - ../syms/funcs_ovr_232.txt
+    - ../syms/funcs_SCUS_94426.txt
+
+# Threads overlays (230-233) are mutually exclusive: all load at 0x800AB9F0.
+# Layout of each object: .rodata (name strings + pointer tables) -> .text -> .data
+segments:
+  - name: ovr_232
+    type: code
+    start: 0x0
+    vram: 0x800ab9f0
+    subsegments:
+      - [0x0,    .rodata, ovr_232_1]
+      - [0x40C,  asm,     ovr_232_1]
+      - [0x89DC, .data,   ovr_232_1]
+
+  - [0x9C84]
