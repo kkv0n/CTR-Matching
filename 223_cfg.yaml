@@ -3,7 +3,7 @@ options:
   compiler: PSYQ
   basename: CrashTeamRacing
   target_path: ../223_EndRaceMenu_Relic.bin
-  base_path: split
+  base_path: ../split
   disassemble_all: true
   symbol_addrs_path:
     - ../syms/funcs_ovr_223.txt

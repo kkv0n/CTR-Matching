@@ -3,7 +3,7 @@ options:
   compiler: PSYQ
   basename: CrashTeamRacing
   target_path: ../230_Threads_MainMenu.bin
-  base_path: split
+  base_path: ../split
   disassemble_all: true
   symbol_addrs_path:
     - ../syms/funcs_ovr_230.txt
@@ -17,8 +17,10 @@ segments:
     start: 0x0
     vram: 0x800ab9f0
     subsegments:
-      - [0x0,    .rodata, ovr_230_1]
-      - [0xB8,   asm,     ovr_230_1]
-      - [0x8944, .data,   ovr_230_1]
+      - [0x0,      .rodata,  ovr_230_1]
+      - [0xB8,     asm,      ovr_230_1]
+      - [0x8AF4,   .data,    ovr_230_1]
+      - [0xA07C,   asm,      ovr_230_2]
+      - [0xADBC,   .data,    ovr_230_2]
 
   - [0xAE44]

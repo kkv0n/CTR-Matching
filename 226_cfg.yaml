@@ -1,0 +1,27 @@
+options:
+  platform: psx
+  compiler: PSYQ
+  basename: CrashTeamRacing
+  target_path: ../226_Quadblock_1P.bin
+  base_path: ../split
+  disassemble_all: true
+  gp_value: 0x8008cf6c
+  symbol_addrs_path:
+    - ../syms/funcs_ovr_226.txt
+    - ../syms/funcs_SCUS_94426.txt
+
+# Quadblock overlays (226-229) are mutually exclusive: all load at 0x800A0CB8,
+# right where the EndRaceMenu group ends. They do use $gp, hence gp_value.
+# .rodata is a single word: the overlay id (226->0xB, 227->0xC, 228->0xD, 229->0xE),
+# continuing the sequence of the EndRaceMenu overlays (221->5 .. 225->9).
+segments:
+  - name: ovr_226
+    type: code
+    start: 0x0
+    vram: 0x800a0cb8
+    subsegments:
+      - [0x0,    .rodata, ovr_226_1]
+      - [0x4,    asm,     ovr_226_1]
+      - [0xA754, .data,   ovr_226_1]
+
+  - [0xACB8]

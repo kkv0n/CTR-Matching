@@ -3,7 +3,7 @@ options:
   compiler: PSYQ
   basename: CrashTeamRacing
   target_path: ../224_EndRaceMenu_TimeTrial.bin
-  base_path: split
+  base_path: ../split
   disassemble_all: true
   symbol_addrs_path:
     - ../syms/funcs_ovr_224.txt

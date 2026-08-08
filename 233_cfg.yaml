@@ -3,7 +3,7 @@ options:
   compiler: PSYQ
   basename: CrashTeamRacing
   target_path: ../233_Threads_Cutscene.bin
-  base_path: split
+  base_path: ../split
   disassemble_all: true
   gp_value: 0x8008cf6c
   symbol_addrs_path:
@@ -20,11 +20,14 @@ segments:
     start: 0x0
     vram: 0x800ab9f0
     subsegments:
-      - [0x0,     .rodata, ovr_233_1]   # spawn, g-dancer, podium, tawna, victorycam + pointer tables
+      - [0x0,     .rodata, ovr_233_1]
       - [0x3E4,   asm,     ovr_233_1]
-      - [0x4858,  .data,   ovr_233_1]
-      - [0xCC54,  .rodata, ovr_233_2]
-      - [0xCC78,  asm,     ovr_233_2]
-      - [0xDA04,  .data,   ovr_233_2]
+      - [0x518C,  .data,   ovr_233_1]
+      - [0xBD94,  asm,     ovr_233_2]
+      - [0xCB68,  asm,     ovr_233_3]
+      - [0xCBA8,  .data,   ovr_233_3]
+      - [0xCC54,  .rodata, ovr_233_4]
+      - [0xCC78,  asm,     ovr_233_4]
+      - [0xDA98,  .data,   ovr_233_4]
 
   - [0xDE0C]

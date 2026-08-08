@@ -3,7 +3,7 @@ options:
   compiler: PSYQ
   basename: CrashTeamRacing
   target_path: ../SCUS_944.26
-  base_path: split
+  base_path: ../split
   disassemble_all: true
   gp_value: 0x8008cf6c
   symbol_addrs_path: ../syms/funcs_SCUS_94426.txt

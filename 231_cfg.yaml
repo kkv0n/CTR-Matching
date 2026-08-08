@@ -3,7 +3,7 @@ options:
   compiler: PSYQ
   basename: CrashTeamRacing
   target_path: ../231_Threads_Racing.bin
-  base_path: split
+  base_path: ../split
   disassemble_all: true
   symbol_addrs_path:
     - ../syms/funcs_ovr_231.txt
@@ -34,13 +34,13 @@ segments:
       - [0x771C,  .rodata, ovr_231_2]    # baron, drumbuddy
       - [0x7730,  asm,     ovr_231_2]
       - [0x7EEC,  .rodata, ovr_231_3]    # blade
-      - [0x7F88,  asm,     ovr_231_3]
+      - [0x7EF4,  asm,     ovr_231_3]
       - [0x81D0,  .data,   ovr_231_3]
       - [0x82CC,  .rodata, ovr_231_4]    # explosion1, crate, fruit_crate, crystal, startbanner
-      - [0x838C,  asm,     ovr_231_4]
+      - [0x8314,  asm,     ovr_231_4]
       - [0x9F78,  .data,   ovr_231_4]
       - [0x9F88,  .rodata, ovr_231_5]    # armadillo
-      - [0xA184,  asm,     ovr_231_5]
+      - [0x9F94,  asm,     ovr_231_5]
       - [0xA554,  .rodata, ovr_231_6]    # fireball
       - [0xA560,  asm,     ovr_231_6]
       - [0xA954,  .data,   ovr_231_6]
@@ -52,24 +52,24 @@ segments:
       - [0xB674,  .rodata, ovr_231_9]    # fruit
       - [0xB67C,  asm,     ovr_231_9]
       - [0xB93C,  .rodata, ovr_231_10]
-      - [0xBE24,  asm,     ovr_231_10]
+      - [0xB948,  asm,     ovr_231_10]
       - [0xC130,  .data,   ovr_231_10]
       - [0xC194,  .rodata, ovr_231_11]
-      - [0xC4C8,  asm,     ovr_231_11]
+      - [0xC19C,  asm,     ovr_231_11]
       - [0xC6F4,  .data,   ovr_231_11]
       - [0xC7F0,  .rodata, ovr_231_12]   # plant
-      - [0xCB00,  asm,     ovr_231_12]
+      - [0xC7F8,  asm,     ovr_231_12]
       - [0xD0DC,  .data,   ovr_231_12]
       - [0xD208,  .rodata, ovr_231_13]
-      - [0xD42C,  asm,     ovr_231_13]
+      - [0xD210,  asm,     ovr_231_13]
       - [0xD8B0,  .rodata, ovr_231_14]
-      - [0xDB1C,  asm,     ovr_231_14]
-      - [0xDBF4,  .rodata, ovr_231_15]   # spidershadow
-      - [0xDE58,  asm,     ovr_231_15]
+      - [0xD8BC,  asm,     ovr_231_14]
+      - [0xDBF4,  .rodata, ovr_231_15]   # spider, spidershadow
+      - [0xDC0C,  asm,     ovr_231_15]
       - [0xE3B4,  .data,   ovr_231_15]
       - [0xE3F8,  .rodata, ovr_231_16]   # teeth
       - [0xE454,  asm,     ovr_231_16]
       - [0xE8C8,  .rodata, ovr_231_17]
-      - [0xEA30,  asm,     ovr_231_17]
+      - [0xE8D0,  asm,     ovr_231_17]
 
   - [0xEB58]
