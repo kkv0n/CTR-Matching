@@ -48,7 +48,7 @@ segments:
       - [0xAAD0,  asm,     ovr_231_7]
       - [0xB0A4,  .data,   ovr_231_7]
       - [0xB35C,  .rodata, ovr_231_8]    # follower
-      - [0xB420,  asm,     ovr_231_8]
+      - [0xB368,  asm,     ovr_231_8]    # .rodata is only the name string, so .text starts here
       - [0xB674,  .rodata, ovr_231_9]    # fruit
       - [0xB67C,  asm,     ovr_231_9]
       - [0xB93C,  .rodata, ovr_231_10]
@@ -67,8 +67,9 @@ segments:
       - [0xDBF4,  .rodata, ovr_231_15]   # spider, spidershadow
       - [0xDC0C,  asm,     ovr_231_15]
       - [0xE3B4,  .data,   ovr_231_15]
+      - [0xE3E8,  asm,     ovr_231_15b]  # two `jr $ra; nop` stubs; this object has no .rodata
       - [0xE3F8,  .rodata, ovr_231_16]   # teeth
-      - [0xE454,  asm,     ovr_231_16]
+      - [0xE400,  asm,     ovr_231_16]   # .rodata is only the name string, so .text starts here
       - [0xE8C8,  .rodata, ovr_231_17]
       - [0xE8D0,  asm,     ovr_231_17]
 

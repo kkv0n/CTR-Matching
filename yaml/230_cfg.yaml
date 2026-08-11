@@ -20,7 +20,8 @@ segments:
       - [0x0,      .rodata,  ovr_230_1]
       - [0xB8,     asm,      ovr_230_1]
       - [0x8AF4,   .data,    ovr_230_1]
-      - [0xA07C,   asm,      ovr_230_2]
+      - [0xA058,   .rodata,  ovr_230_2]   # the object's name strings: SliceBuf, VlcBuf, RingBuf
+      - [0xA074,   asm,      ovr_230_2]   # .text starts at the lui right after "RingBuf", not at 0xA07C
       - [0xADBC,   .data,    ovr_230_2]
 
   - [0xAE44]
